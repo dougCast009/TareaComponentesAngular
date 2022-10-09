@@ -1,16 +1,16 @@
 <div class="container mt-2">
     <h1 class="text-center">Validar Edad Cliente</h1>
     <h4 class="fw-bold">Cliente: <span class="fw-normal">Douglas Castillo Flores</span> </h4>
-    <h4 class="fw-bold">Edad: <span class="fw-normal">24</span> </h4>
-    <button class="btn btn-success me-3" type="submit">Aumentar Edad</button>
-    <button class="btn btn-warning" type="submit">Disminuir Edad</button>
+    <h4 class="fw-bold">Edad: <span class="fw-normal">{{edad}}</span></h4>
+    <div *ngIf="edad >= 18">
+        <p class="text-success">El cliente es mayor de edad, puede ingresar al bar</p>
+    </div>
+    <button class="btn btn-success me-3" type="submit" (click)="amuentarEdad()">Aumentar Edad</button>
+    <button class="btn btn-warning" type="submit" (click)="restarEdad()">Disminuir Edad</button>
     <hr>
     <h4 class="fw-bold mt-2">Hobbies:</h4>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item list-group-item-action">Salir en Bicicleta</li>
-        <li class="list-group-item list-group-item-action">Hacer Ejercicio</li>
-        <li class="list-group-item list-group-item-action">Ver Netflix</li>
-        <li class="list-group-item list-group-item-action">Jugar Play</li>
+    <ul *ngFor="let hobbie of hobbies" class="list-group list-group-flush">
+        <li class="list-group-item list-group-item-action">{{hobbie}}</li>
     </ul>
 </div>
 
